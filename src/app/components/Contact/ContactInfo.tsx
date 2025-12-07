@@ -22,14 +22,7 @@ const contactItems = [
     link: 'tel:+917856815038',
     color: 'text-[#22c55e]',
   },
-  {
-    id: 3,
-    icon: FaPhone,
-    title: 'Phone 2',
-    content: '+91 7903416992',
-    link: 'tel:+917903416992',
-    color: 'text-[#22c55e]',
-  },
+
   {
     id: 4,
     icon: FaEnvelope,
