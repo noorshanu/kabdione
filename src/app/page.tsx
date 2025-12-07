@@ -7,11 +7,11 @@ import IndividualsSection from './components/IndividualsSection'
 import EcoSystemSection from './components/EcoSystemSection'
 import Marquee from './components/Marquee'
 import Ourservices from './components/Ourservices'
-import InitiativesSection from './components/InitiativesSection'
 import PresenceSection from './components/PresenceSection'
 import Founders from './components/Founders'
 import TestimonialsSection from './components/TestimonialsSection'
 import ImpactSection from './components/ImpactSection'
+import HomeCTA from './components/HomeCTA'
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -34,6 +34,7 @@ export default function Home() {
       <Founders />
       <TestimonialsSection />
       <ImpactSection />
+      <HomeCTA onOpenModal={openModal} />
       <BookingModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

@@ -10,11 +10,7 @@ const navItems = [
   { href: '/services', label: 'Services' },
   { href: '/initiatives', label: 'Initiatives' },
   { href: '/franchise', label: 'Franchise' },
- 
-
-
   { href: '/scrap-calculator', label: 'Scrap Calculator' },
-  { href: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -50,6 +46,16 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              className={`font-bold px-6 py-2.5 rounded-lg transition-all ${
+                pathname === '/contact'
+                  ? 'bg-[#22c55e] text-white shadow-lg'
+                  : 'bg-[#22c55e] text-white hover:bg-[#16a34a] shadow-md hover:shadow-lg hover:scale-105'
+              }`}
+            >
+              Contact
+            </Link>
           </nav>
         </div>
 
@@ -68,6 +74,16 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/contact"
+            className={`text-center font-bold py-2.5 px-2 rounded-lg text-sm transition-all ${
+              pathname === '/contact'
+                ? 'bg-[#22c55e] text-white shadow-lg'
+                : 'bg-[#22c55e] text-white hover:bg-[#16a34a] shadow-md'
+            }`}
+          >
+            Contact
+          </Link>
         </nav>
       </div>
     </header>
