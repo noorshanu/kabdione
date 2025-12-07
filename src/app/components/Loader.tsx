@@ -128,6 +128,8 @@ export default function Loader() {
             style={{
               background: i % 2 === 0 ? '#22c55e' : '#ff7400',
               opacity: 0.6,
+              left: `${20 + i * 15}%`,
+              top: `${30 + (i % 3) * 20}%`,
             }}
             animate={{
               y: [0, -100, 0],
@@ -140,10 +142,6 @@ export default function Loader() {
               repeat: Infinity,
               delay: i * 0.3,
               ease: 'easeInOut',
-            }}
-            style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + (i % 3) * 20}%`,
             }}
           />
         ))}

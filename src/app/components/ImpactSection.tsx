@@ -40,7 +40,7 @@ interface CounterProps {
 function Counter({ target, suffix, isDecimal, duration = 2000 }: CounterProps) {
   const [count, setCount] = useState(0)
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, threshold: 0.3 })
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   useEffect(() => {
     if (!isInView) return

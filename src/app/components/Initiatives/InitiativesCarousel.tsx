@@ -105,7 +105,7 @@ export default function InitiativesCarousel() {
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
             {images.map((img, index) => (
               <button
-                key={`initiatives-carousel-indicator-${img.id}-${index}`}
+                key={`initiatives-carousel-indicator-${img.src}-${index}`}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
                   index === currentIndex
