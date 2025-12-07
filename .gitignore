@@ -13,3 +13,5 @@
 .next
 .next/cache
 node_modules
+.DS_Store
+public/assets/.DS_Store
