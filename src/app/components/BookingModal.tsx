@@ -1,6 +1,10 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import ScrapPhotoUpload, {
+  revokeScrapPhotoUrls,
+  type ScrapPhotoItem,
+} from '@/app/components/ScrapPhotoUpload'
 
 interface BookingModalProps {
   isOpen: boolean
@@ -46,17 +50,26 @@ export default function BookingModal({ isOpen, onClose, formType }: BookingModal
       setIsLoading(false)
       setIsSuccess(false)
       setError(null)
+      setScrapPhotos((prev) => {
+        revokeScrapPhotoUrls(prev)
+        return []
+      })
     } else if (!isOpen && wasOpen) {
       // Modal just closed - reset states
       setIsLoading(false)
       setIsSuccess(false)
       setError(null)
+      setScrapPhotos((prev) => {
+        revokeScrapPhotoUrls(prev)
+        return []
+      })
     }
     
     prevIsOpenRef.current = isOpen
   }, [isOpen])
 
   const [timeSlots, setTimeSlots] = useState<Array<{ value: string; label: string }>>([])
+  const [scrapPhotos, setScrapPhotos] = useState<ScrapPhotoItem[]>([])
 
   useEffect(() => {
     // Generate time slots
@@ -92,19 +105,28 @@ export default function BookingModal({ isOpen, onClose, formType }: BookingModal
     const form = e.currentTarget
     const formData = new FormData(form)
 
+    if (formType === 'pickup') {
+      scrapPhotos.forEach((photo) => {
+        formData.append('scrap_photo', photo.file, photo.file.name)
+      })
+    }
+
     try {
-      await fetch(form.action, {
+      const res = await fetch('/api/submit-form', {
         method: 'POST',
-        mode: 'no-cors',
         body: formData,
       })
+      const data = (await res.json().catch(() => null)) as { ok?: boolean } | null
 
-      // Since we're using no-cors, we can't check the response
-      // But we'll assume success if no error is thrown
+      if (!res.ok || !data?.ok) {
+        throw new Error('Submit failed')
+      }
+
       setIsLoading(false)
       setIsSuccess(true)
-      
-      // Reset form
+
+      revokeScrapPhotoUrls(scrapPhotos)
+      setScrapPhotos([])
       form.reset()
       
       // Auto close after 3 seconds
@@ -316,6 +338,12 @@ export default function BookingModal({ isOpen, onClose, formType }: BookingModal
                   </select>
                 </div>
               </div>
+
+              <ScrapPhotoUpload
+                photos={scrapPhotos}
+                onChange={setScrapPhotos}
+                disabled={isLoading}
+              />
 
               <input type="hidden" name="source" value="home_pickup_modal" />
 
