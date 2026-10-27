@@ -4,20 +4,24 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
-const navItems = [
+const desktopNavItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/initiatives', label: 'Initiatives' },
   { href: '/franchise', label: 'Franchise' },
-  { href: '/scrap-calculator', label: 'Scrap Calculator' },
+]
+
+const mobileNavItems = [
+  ...desktopNavItems,
+  { href: '/career', label: 'Career' },
 ]
 
 export default function Navbar() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-0 z-[100] bg-white backdrop-blur-md border-b border-slate-900/5">
+    <header className="z-[100] bg-white backdrop-blur-md border-b border-slate-900/5 md:sticky md:top-0">
       <div className="max-w-[1200px] mx-auto px-5">
         <div className="flex flex-col md:flex-row items-center justify-between py-2 gap-3">
           <Link href="/" className="flex items-center justify-center md:justify-start" aria-label="Aone Kabadi home">
@@ -33,7 +37,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-3 items-center" aria-label="Main navigation">
-            {navItems.map((item) => (
+            {desktopNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -61,7 +65,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation - 3 items per row */}
         <nav className="md:hidden w-full grid grid-cols-3 gap-2 pb-1" aria-label="Main navigation">
-          {navItems.map((item) => (
+          {mobileNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}

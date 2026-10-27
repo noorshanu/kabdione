@@ -7,10 +7,11 @@ import Image from 'next/image' // Uncomment when you have actual images
 const founders = [
   {
     id: 1,
-    name: 'Mr. Monty Jaiswal',
+    name: 'Suraj Saw',
     title: 'Co-Founder & MD',
-    description: 'A leader who believes that scrap isn\'t a burden but a renewable asset for communities and the environment. Guided by his mission, Aone Kabadi has grown into a major force connecting households and enterprises to ethical recycling. His commitment to sustainability motivates the entire team to create meaningful change every day.',
-    image: '/assets/monty.jpeg', // You'll need to add the actual image
+    description:
+      'A leader who sees scrap not as a burden, but as a renewable asset for communities and the environment. With Suraj Saw at the helm, Aone Kabadi has grown into a trusted bridge between households, enterprises, and ethical recycling. His steady commitment to sustainability keeps the whole team focused on creating real, lasting change every day.',
+    image: '/suraj.jpg',
     gradient: 'from-blue-500 to-cyan-500',
   },
   {

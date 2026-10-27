@@ -48,7 +48,7 @@ export default function FoundersMessage() {
               transition={{ delay: 0.5 }}
               className="text-base md:text-lg"
             >
-              When Mr. Monty Jaiswal and Mr. Sumit Bardhan Jaiswal started Aone Kabadi in 2025, they didn&apos;t set out to chase convenience or profits — they set out to change how people see waste. What began as collecting household scrap quickly became a mission: to turn discarded things into dependable value, opportunity, and livelihood.
+              When Suraj Saw and Mr. Sumit Bardhan Jaiswal started Aone Kabadi in 2025, they didn&apos;t set out to chase convenience or profits — they set out to change how people see waste. What began as collecting household scrap quickly became a mission: to turn discarded material into dependable value, opportunity, and livelihood.
             </motion.p>
 
             <motion.p
@@ -79,7 +79,7 @@ export default function FoundersMessage() {
               className="text-center mt-8 pt-6 border-t border-[#22c55e]/20"
             >
               <p className="text-xl font-bold text-[#ff7400]">
-                — Monty Jaiswal & Sumit Bardhan Jaiswal
+                — Suraj Saw & Sumit Bardhan Jaiswal
               </p>
             </motion.div>
           </motion.div>

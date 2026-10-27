@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-6 border-t border-gray-800 text-center text-sm text-gray-400">
-          © {currentYear} Aone Kabadi. All rights reserved.
+          © {currentYear} Managed by Shreya Traders. All rights reserved.
         </div>
       </div>
     </footer>

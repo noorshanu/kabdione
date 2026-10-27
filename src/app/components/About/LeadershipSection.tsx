@@ -7,9 +7,9 @@ import Image from 'next/image'
 const leaders = [
   {
     id: 1,
-    name: 'Mr. Monty Jaiswal',
+    name: 'Suraj Saw',
     role: 'Managing Director',
-    image: '/assets/monty.jpeg',
+    image: '/suraj.jpg',
   },
   {
     id: 2,
