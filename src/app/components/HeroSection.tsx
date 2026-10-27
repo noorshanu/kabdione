@@ -1,7 +1,5 @@
 'use client'
 
-import Link from 'next/link'
-
 interface HeroSectionProps {
   onOpenModal: (type: 'pickup' | 'franchise') => void
 }
@@ -46,17 +44,6 @@ export default function HeroSection({ onOpenModal }: HeroSectionProps) {
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-[#22c55e] via-green to-[#16a34a] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
-          <Link
-            href="/rates"
-            className="group px-10 py-4 bg-white/10 backdrop-blur-md border-2 border-white/40 text-white font-extrabold rounded-2xl text-lg hover:bg-white/20 hover:border-white/60 hover:scale-105 hover:-translate-y-1 transition-all duration-300 ease-out shadow-lg hover:shadow-xl"
-          >
-            <span className="flex items-center gap-2">
-              See Rates
-              <svg className="w-5 h-5 transform group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
-            </span>
-          </Link>
           <button
             onClick={() => onOpenModal('franchise')}
             className="group relative px-10 py-4 bg-gradient-to-r from-orange via-[#ff7947] to-orange text-white font-extrabold rounded-2xl text-lg shadow-[0_8px_24px_rgba(255,111,60,0.4)] hover:shadow-[0_12px_32px_rgba(255,111,60,0.6)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 ease-out overflow-hidden"
